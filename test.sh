@@ -27,7 +27,8 @@ awk 'NR >=3 && NR <=6' filename
 0,30 18-23 * * *  /usr/local/etc/rc.d/lighttpd restart #表示在每天18.00至23.00之间每隔30分钟重启apache
 * 23-7/1 * * *  /usr/local/etc/rc.d/lighttpd restart #晚上11点到早上7点之间，每隔一小时重启apache
 
-
+#删除某路径下N天前的特定文件
+find /usr/local/backups -mtime +10 -name "*.*" -exec rm -rf {} \;
 
 
 
